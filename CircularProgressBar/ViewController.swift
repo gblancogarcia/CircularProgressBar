@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var circularProgressBar: CircularProgressBar!
+    let step: CGFloat = 0.05
+    let timeInterval = 0.05
     
-    var progress:CGFloat = 0;
+    @IBOutlet weak var circularProgressBar: CircularProgressBar!
+    @IBOutlet weak var button: UIButton!
+    
+    var progress: CGFloat = 0;
     var timer = NSTimer()
     
     override func viewDidLoad() {
@@ -21,25 +25,33 @@ class ViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        startTimmer()
     }
     
     func startTimmer() {
         let selector = #selector(updateCircularProgressBar)
 
         timer.invalidate()
-        timer = .scheduledTimerWithTimeInterval(0.1, target: self, selector: selector, userInfo: nil, repeats: true)
+        timer = .scheduledTimerWithTimeInterval(timeInterval, target: self, selector: selector, userInfo: nil, repeats: true)
     }
     
     func updateCircularProgressBar() {
         if (progress <= 1.0) {
-            progress += CGFloat(0.05);
+            progress += step;
             circularProgressBar.progress = progress
         } else {
             progress = 1.0
             timer.invalidate()
+            button.enabled = true
         }
+    }
+    
+    @IBAction func buttonPressed(sender: AnyObject) {
+        button.enabled = false
+        
+        progress = 0.0
+        circularProgressBar.progress = progress
+
+        startTimmer()
     }
 }
 
