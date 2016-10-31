@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:CircularProgressBar.playground">
+   </FileRef>
+   <FileRef
       location = "group:CircularProgressBar/CircularProgressBar.xcodeproj">
    </FileRef>
    <FileRef

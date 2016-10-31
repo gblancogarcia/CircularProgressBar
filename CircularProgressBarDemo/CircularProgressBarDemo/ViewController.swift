@@ -12,32 +12,32 @@ import CircularProgressBar
 private let minProgress = CGFloat(0.0)
 private let maxProgress = CGFloat(1.0)
 private let step = CGFloat(0.05)
-private let timeInterval: NSTimeInterval = 0.05
+private let timeInterval: TimeInterval = 0.05
 
 private let start = "Start"
 private let stop = "Stop"
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var circularProgressBar: CircularProgressBar!
+    @IBOutlet weak var circularProgressBar: CircularProgressBarView!
     @IBOutlet weak var button: UIButton!
     
     var started = false
     var progress: CGFloat = minProgress;
-    var timer = NSTimer()
+    var timer = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUp()
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
     
     func setUp() {
-        circularProgressBar.topColor = UIColor.cyanColor()
-        circularProgressBar.bottomColor = UIColor.magentaColor()
+//        circularProgressBar.topColor = UIColor.cyan
+//        circularProgressBar.bottomColor = UIColor.magenta
     }
     
     func updateUserInterface() {
@@ -60,13 +60,13 @@ class ViewController: UIViewController {
     }
     
     func updateButton() {
-        button.enabled = !started
+        button.isEnabled = !started
     }
     
     func start() {
         started = true
         let selector = #selector(updateUserInterface)
-        timer = .scheduledTimerWithTimeInterval(timeInterval, target: self, selector: selector, userInfo: nil, repeats: true)
+        timer = .scheduledTimer(timeInterval: timeInterval, target: self, selector: selector, userInfo: nil, repeats: true)
     }
     
     func stop() {
@@ -74,7 +74,7 @@ class ViewController: UIViewController {
         started = false
     }
     
-    @IBAction func buttonPressed(sender: UIButton) {
+    @IBAction func buttonPressed(_ sender: UIButton) {
         if started {
             stop()
         }

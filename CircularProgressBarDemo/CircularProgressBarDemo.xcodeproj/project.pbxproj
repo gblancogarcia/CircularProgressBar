@@ -12,8 +12,8 @@
 		43777C9B1D0899050037492F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43777C991D0899050037492F /* Main.storyboard */; };
 		43777C9D1D0899050037492F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43777C9C1D0899050037492F /* Assets.xcassets */; };
 		43777CA01D0899050037492F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43777C9E1D0899050037492F /* LaunchScreen.storyboard */; };
-		43C4D59B1D1EB1DA005D6C32 /* CircularProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43C4D59A1D1EB1DA005D6C32 /* CircularProgressBar.framework */; };
-		43C4D59C1D1EB1DA005D6C32 /* CircularProgressBar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43C4D59A1D1EB1DA005D6C32 /* CircularProgressBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		43F76C741DA93EC400AD5FFE /* CircularProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F76C731DA93EC400AD5FFE /* CircularProgressBar.framework */; };
+		43F76C751DA93EC400AD5FFE /* CircularProgressBar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43F76C731DA93EC400AD5FFE /* CircularProgressBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				43C4D59C1D1EB1DA005D6C32 /* CircularProgressBar.framework in Embed Frameworks */,
+				43F76C751DA93EC400AD5FFE /* CircularProgressBar.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +38,7 @@
 		43777C9C1D0899050037492F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43777C9F1D0899050037492F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43777CA11D0899050037492F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43C4D59A1D1EB1DA005D6C32 /* CircularProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = CircularProgressBar.framework; path = "../../../Library/Developer/Xcode/DerivedData/CircularProgressBar-aqtydycmhjbfxaapaqqlccubbpye/Build/Products/Debug-iphoneos/CircularProgressBar.framework"; sourceTree = SOURCE_ROOT; };
+		43F76C731DA93EC400AD5FFE /* CircularProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CircularProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43C4D59B1D1EB1DA005D6C32 /* CircularProgressBar.framework in Frameworks */,
+				43F76C741DA93EC400AD5FFE /* CircularProgressBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 		43777CAB1D089EE80037492F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43C4D59A1D1EB1DA005D6C32 /* CircularProgressBar.framework */,
+				43F76C731DA93EC400AD5FFE /* CircularProgressBar.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -119,11 +119,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Gerardo Blanco García";
 				TargetAttributes = {
 					43777C911D0899050037492F = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -204,8 +205,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -249,8 +252,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -269,6 +274,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -277,10 +283,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CircularProgressBarDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gblancogarcia.CircularProgressBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -288,10 +296,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CircularProgressBarDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gblancogarcia.CircularProgressBarDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

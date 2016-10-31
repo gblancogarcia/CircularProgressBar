@@ -8,8 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		43777C7E1D08920B0037492F /* CircularProgressBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 43777C7D1D08920B0037492F /* CircularProgressBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		43777C871D08929C0037492F /* CircularProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43777C851D08929C0037492F /* CircularProgressBar.swift */; };
-		43777C881D08929C0037492F /* StyleKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43777C861D08929C0037492F /* StyleKit.swift */; };
+		43777C871D08929C0037492F /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43777C851D08929C0037492F /* CircularProgressBarView.swift */; };
 		43C4D59E1D1EB4A4005D6C32 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4D59D1D1EB4A4005D6C32 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -17,8 +16,7 @@
 		43777C7A1D08920B0037492F /* CircularProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CircularProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43777C7D1D08920B0037492F /* CircularProgressBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircularProgressBar.h; sourceTree = "<group>"; };
 		43777C7F1D08920B0037492F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43777C851D08929C0037492F /* CircularProgressBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBar.swift; sourceTree = "<group>"; };
-		43777C861D08929C0037492F /* StyleKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKit.swift; sourceTree = "<group>"; };
+		43777C851D08929C0037492F /* CircularProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
 		43C4D59D1D1EB4A4005D6C32 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -53,10 +51,9 @@
 			isa = PBXGroup;
 			children = (
 				43777C7D1D08920B0037492F /* CircularProgressBar.h */,
-				43777C851D08929C0037492F /* CircularProgressBar.swift */,
+				43777C851D08929C0037492F /* CircularProgressBarView.swift */,
 				43C4D59D1D1EB4A4005D6C32 /* Colors.swift */,
 				43777C7F1D08920B0037492F /* Info.plist */,
-				43777C861D08929C0037492F /* StyleKit.swift */,
 			);
 			path = CircularProgressBar;
 			sourceTree = "<group>";
@@ -104,6 +101,7 @@
 				TargetAttributes = {
 					43777C791D08920B0037492F = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -139,9 +137,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43777C881D08929C0037492F /* StyleKit.swift in Sources */,
 				43C4D59E1D1EB4A4005D6C32 /* Colors.swift in Sources */,
-				43777C871D08929C0037492F /* CircularProgressBar.swift in Sources */,
+				43777C871D08929C0037492F /* CircularProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +252,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -273,6 +271,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gblancogarcia.CircularProgressBar;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
