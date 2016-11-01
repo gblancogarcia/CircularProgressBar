@@ -19,7 +19,7 @@ private let stop = "Stop"
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var circularProgressBar: CircularProgressBarView!
+    @IBOutlet weak var circularProgressBarView: CircularProgressBarView!
     @IBOutlet weak var button: UIButton!
     
     var started = false
@@ -36,13 +36,12 @@ class ViewController: UIViewController {
     }
     
     func setUp() {
-//        circularProgressBar.topColor = UIColor.cyan
-//        circularProgressBar.bottomColor = UIColor.magenta
+
     }
     
     func updateUserInterface() {
         updateProgress()
-        updateCircularProgressBar()
+        updateCircularProgressBarView()
         updateButton()
     }
     
@@ -55,8 +54,8 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateCircularProgressBar() {
-        circularProgressBar.progress = progress
+    func updateCircularProgressBarView() {
+        circularProgressBarView.progress = progress
     }
     
     func updateButton() {
@@ -80,7 +79,7 @@ class ViewController: UIViewController {
         }
         
         progress = minProgress
-        updateCircularProgressBar()
+        updateCircularProgressBarView()
         
         start()
     }

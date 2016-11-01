@@ -40,7 +40,7 @@ open class CircularProgressBarView: UIView {
         }
     }
     
-    @IBInspectable open var showPercentage = false {
+    @IBInspectable open var showPercentage: Bool = false {
         didSet {
             setNeedsDisplay()
         }
@@ -88,12 +88,12 @@ open class CircularProgressBarView: UIView {
         drawBackgroundArch(rect: rect, context: context)
         drawArch(rect: rect, context: context)
         
-        if (showPercentage) {
+        if showPercentage {
             drawPercentage(rect: rect, context: context)
         }
     }
     
-    func drawBackgroundArch(rect: CGRect, context: CGContext)  {
+    func drawBackgroundArch(rect rect: CGRect, context: CGContext)  {
         context.saveGState()
         context.beginTransparencyLayer(auxiliaryInfo: nil)
         
@@ -123,7 +123,7 @@ open class CircularProgressBarView: UIView {
         context.restoreGState()
     }
     
-    func drawArch(rect: CGRect, context: CGContext)  {
+    func drawArch(rect rect: CGRect, context: CGContext)  {
         context.saveGState()
         context.beginTransparencyLayer(auxiliaryInfo: nil)
         
@@ -150,7 +150,7 @@ open class CircularProgressBarView: UIView {
         context.restoreGState()
     }
     
-    func drawPercentage(rect: CGRect, context: CGContext)  {
+    func drawPercentage(rect rect: CGRect, context: CGContext)  {
         context.saveGState()
         context.beginTransparencyLayer(auxiliaryInfo: nil)
         
@@ -182,7 +182,7 @@ open class CircularProgressBarView: UIView {
         context.restoreGState()
     }
 
-    func createArcPath(rect: CGRect, progress: CGFloat) -> UIBezierPath {
+    func createArcPath(rect rect: CGRect, progress: CGFloat) -> UIBezierPath {
         let degrees: CGFloat = progress * -360.0 + 90.0
         let center = CGPoint(x: rect.midX, y: rect.midY)
         let startAngle = -90.0 * CGFloat.pi / 180.0
@@ -194,7 +194,7 @@ open class CircularProgressBarView: UIView {
         return path
     }
     
-    func createStartCapPath(rect: CGRect) -> UIBezierPath {
+    func createStartCapPath(rect rect: CGRect) -> UIBezierPath {
         let degrees: CGFloat = 90.0
         let center = CGPoint(x: rect.midX, y: rect.midY)
         
@@ -209,7 +209,7 @@ open class CircularProgressBarView: UIView {
         return path
     }
 
-    func createEndCapPath(rect: CGRect) -> UIBezierPath {
+    func createEndCapPath(rect rect: CGRect) -> UIBezierPath {
         let degrees: CGFloat = progress * -360.0 + 90.0
         let center = CGPoint(x: rect.midX, y: rect.midY)
         
@@ -224,10 +224,10 @@ open class CircularProgressBarView: UIView {
         return path
     }
     
-    func pointFrom(center: CGPoint, radius: CGFloat, degrees: CGFloat) -> CGPoint {
+    func pointFrom(center center: CGPoint, radius: CGFloat, degrees: CGFloat) -> CGPoint {
         var result: CGPoint = CGPoint.zero
         
-        let radians = degreesToRadians(degrees: Double(-degrees))
+        let radians = degreesToRadians(Double(-degrees))
 
         let y = round(Double(radius) * sin(radians)) + Double(center.y)
         let x = round(Double(radius) * cos(radians)) + Double(center.x)
@@ -238,7 +238,7 @@ open class CircularProgressBarView: UIView {
         return result;
     }
     
-    func degreesToRadians(degrees: Double) -> Double {
+    func degreesToRadians(_ degrees: Double) -> Double {
         return degrees * .pi / 180
     }
     

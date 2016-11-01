@@ -1,13 +1,23 @@
 import UIKit
 import PlaygroundSupport
+
 import CircularProgressBar
 
-let x = 0.0
-let y = 0.0
-let width = 80.0
-let height = 80.0
 
-let rect = CGRect(x: x, y: y, width: width, height: height)
+let rect = CGRect(x: 0.0, y: 0.0, width: 128.0, height: 128.0)
+let offset = CGPoint(x: -1.0, y: -1.0)
 
-let circularProgressBar = CircularProgressBarView(frame: rect)
-circularProgressBar.progress = 0.75
+let gridView = GridView(frame: rect)
+gridView.gridSize = 4
+gridView.majorLineEvery = 4
+//gridView.offset = offset
+
+let circularProgressBarView = CircularProgressBarView(frame: rect)
+circularProgressBarView.showPercentage = true
+circularProgressBarView.progress = 0.25
+circularProgressBarView.radius = 60
+circularProgressBarView.lineWidth = 4
+circularProgressBarView.fontSize = 32.0
+
+gridView.addSubview(circularProgressBarView)
+

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		43777C7E1D08920B0037492F /* CircularProgressBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 43777C7D1D08920B0037492F /* CircularProgressBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43777C871D08929C0037492F /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43777C851D08929C0037492F /* CircularProgressBarView.swift */; };
+		438062E41DC8CF26008DAC33 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438062E31DC8CF26008DAC33 /* GridView.swift */; };
 		43C4D59E1D1EB4A4005D6C32 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4D59D1D1EB4A4005D6C32 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -17,6 +18,7 @@
 		43777C7D1D08920B0037492F /* CircularProgressBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircularProgressBar.h; sourceTree = "<group>"; };
 		43777C7F1D08920B0037492F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43777C851D08929C0037492F /* CircularProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
+		438062E31DC8CF26008DAC33 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		43C4D59D1D1EB4A4005D6C32 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,6 +52,7 @@
 		43777C7C1D08920B0037492F /* CircularProgressBar */ = {
 			isa = PBXGroup;
 			children = (
+				438062E31DC8CF26008DAC33 /* GridView.swift */,
 				43777C7D1D08920B0037492F /* CircularProgressBar.h */,
 				43777C851D08929C0037492F /* CircularProgressBarView.swift */,
 				43C4D59D1D1EB4A4005D6C32 /* Colors.swift */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C4D59E1D1EB4A4005D6C32 /* Colors.swift in Sources */,
+				438062E41DC8CF26008DAC33 /* GridView.swift in Sources */,
 				43777C871D08929C0037492F /* CircularProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

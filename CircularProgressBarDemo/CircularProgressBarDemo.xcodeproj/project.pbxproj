@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		43777C961D0899050037492F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43777C951D0899050037492F /* AppDelegate.swift */; };
-		43777C981D0899050037492F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43777C971D0899050037492F /* ViewController.swift */; };
 		43777C9B1D0899050037492F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43777C991D0899050037492F /* Main.storyboard */; };
 		43777C9D1D0899050037492F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43777C9C1D0899050037492F /* Assets.xcassets */; };
 		43777CA01D0899050037492F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43777C9E1D0899050037492F /* LaunchScreen.storyboard */; };
-		43F76C741DA93EC400AD5FFE /* CircularProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43F76C731DA93EC400AD5FFE /* CircularProgressBar.framework */; };
-		43F76C751DA93EC400AD5FFE /* CircularProgressBar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 43F76C731DA93EC400AD5FFE /* CircularProgressBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		438062E11DC8CAA4008DAC33 /* CircularProgressBar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 438062E01DC8CAA4008DAC33 /* CircularProgressBar.framework */; };
+		438062E21DC8CAA4008DAC33 /* CircularProgressBar.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 438062E01DC8CAA4008DAC33 /* CircularProgressBar.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4380F37D1DC89FF800CF2D19 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4380F37C1DC89FF800CF2D19 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,7 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				43F76C751DA93EC400AD5FFE /* CircularProgressBar.framework in Embed Frameworks */,
+				438062E21DC8CAA4008DAC33 /* CircularProgressBar.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,12 +33,12 @@
 /* Begin PBXFileReference section */
 		43777C921D0899050037492F /* CircularProgressBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CircularProgressBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43777C951D0899050037492F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		43777C971D0899050037492F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		43777C9A1D0899050037492F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		43777C9C1D0899050037492F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43777C9F1D0899050037492F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43777CA11D0899050037492F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43F76C731DA93EC400AD5FFE /* CircularProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CircularProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		438062E01DC8CAA4008DAC33 /* CircularProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CircularProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4380F37C1DC89FF800CF2D19 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,7 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43F76C741DA93EC400AD5FFE /* CircularProgressBar.framework in Frameworks */,
+				438062E11DC8CAA4008DAC33 /* CircularProgressBar.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,12 +73,12 @@
 		43777C941D0899050037492F /* CircularProgressBarDemo */ = {
 			isa = PBXGroup;
 			children = (
-				43777C951D0899050037492F /* AppDelegate.swift */,
-				43777C9C1D0899050037492F /* Assets.xcassets */,
 				43777CA11D0899050037492F /* Info.plist */,
+				43777C951D0899050037492F /* AppDelegate.swift */,
+				4380F37C1DC89FF800CF2D19 /* ViewController.swift */,
+				43777C9C1D0899050037492F /* Assets.xcassets */,
 				43777C9E1D0899050037492F /* LaunchScreen.storyboard */,
 				43777C991D0899050037492F /* Main.storyboard */,
-				43777C971D0899050037492F /* ViewController.swift */,
 			);
 			path = CircularProgressBarDemo;
 			sourceTree = "<group>";
@@ -86,7 +86,7 @@
 		43777CAB1D089EE80037492F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				43F76C731DA93EC400AD5FFE /* CircularProgressBar.framework */,
+				438062E01DC8CAA4008DAC33 /* CircularProgressBar.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -124,6 +124,7 @@
 				TargetAttributes = {
 					43777C911D0899050037492F = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = CQ235PGEX8;
 						LastSwiftMigration = 0800;
 					};
 				};
@@ -164,7 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43777C981D0899050037492F /* ViewController.swift in Sources */,
+				4380F37D1DC89FF800CF2D19 /* ViewController.swift in Sources */,
 				43777C961D0899050037492F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,7 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CQ235PGEX8;
 				INFOPLIST_FILE = CircularProgressBarDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gblancogarcia.CircularProgressBarDemo;
@@ -296,7 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = CQ235PGEX8;
 				INFOPLIST_FILE = CircularProgressBarDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gblancogarcia.CircularProgressBarDemo;
