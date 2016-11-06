@@ -85,15 +85,15 @@ open class CircularProgressBarView: UIView {
             return
         }
         
-        drawBackgroundArch(rect: rect, context: context)
-        drawArch(rect: rect, context: context)
+        drawBackgroundArch(rect, context: context)
+        drawArch(rect, context: context)
         
         if showPercentage {
-            drawPercentage(rect: rect, context: context)
+            drawPercentage(rect, context: context)
         }
     }
     
-    func drawBackgroundArch(rect rect: CGRect, context: CGContext)  {
+    func drawBackgroundArch(_ rect: CGRect, context: CGContext)  {
         context.saveGState()
         context.beginTransparencyLayer(auxiliaryInfo: nil)
         
@@ -102,15 +102,15 @@ open class CircularProgressBarView: UIView {
         let color = UIColor.black.cgColor
         context.setShadow(offset: offset, blur: blur, color: color)
         
-        let archPath = createArcPath(rect: rect, progress: maxProgress)
+        let archPath = createArcPath(rect, progress: maxProgress)
         archPath.lineWidth = CGFloat(lineWidth)
         archPath.lineCapStyle = .round
         archPath.stroke()
         
         context.setBlendMode(.sourceIn)
         
-        var topColor = self.topColor.withAlphaComponent(backgroundAlpha)
-        var bottomColor = self.bottomColor.withAlphaComponent(backgroundAlpha)
+        let topColor = self.topColor.withAlphaComponent(backgroundAlpha)
+        let bottomColor = self.bottomColor.withAlphaComponent(backgroundAlpha)
 
         let colors = [topColor.cgColor, bottomColor.cgColor] as CFArray
         let gradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: colors, locations: [0, 1])!
@@ -123,7 +123,7 @@ open class CircularProgressBarView: UIView {
         context.restoreGState()
     }
     
-    func drawArch(rect rect: CGRect, context: CGContext)  {
+    func drawArch(_ rect: CGRect, context: CGContext)  {
         context.saveGState()
         context.beginTransparencyLayer(auxiliaryInfo: nil)
         
@@ -132,7 +132,7 @@ open class CircularProgressBarView: UIView {
         let color = UIColor.black.cgColor
         context.setShadow(offset: offset, blur: blur, color: color)
         
-        let archPath = createArcPath(rect: rect, progress: progress)
+        let archPath = createArcPath(rect, progress: progress)
         archPath.lineWidth = CGFloat(lineWidth)
         archPath.lineCapStyle = .round
         archPath.stroke()
@@ -150,7 +150,7 @@ open class CircularProgressBarView: UIView {
         context.restoreGState()
     }
     
-    func drawPercentage(rect rect: CGRect, context: CGContext)  {
+    func drawPercentage(_ rect: CGRect, context: CGContext)  {
         context.saveGState()
         context.beginTransparencyLayer(auxiliaryInfo: nil)
         
@@ -182,7 +182,7 @@ open class CircularProgressBarView: UIView {
         context.restoreGState()
     }
 
-    func createArcPath(rect rect: CGRect, progress: CGFloat) -> UIBezierPath {
+    func createArcPath(_ rect: CGRect, progress: CGFloat) -> UIBezierPath {
         let degrees: CGFloat = progress * -360.0 + 90.0
         let center = CGPoint(x: rect.midX, y: rect.midY)
         let startAngle = -90.0 * CGFloat.pi / 180.0
@@ -194,7 +194,7 @@ open class CircularProgressBarView: UIView {
         return path
     }
     
-    func createStartCapPath(rect rect: CGRect) -> UIBezierPath {
+    func createStartCapPath(_ rect: CGRect) -> UIBezierPath {
         let degrees: CGFloat = 90.0
         let center = CGPoint(x: rect.midX, y: rect.midY)
         
@@ -209,7 +209,7 @@ open class CircularProgressBarView: UIView {
         return path
     }
 
-    func createEndCapPath(rect rect: CGRect) -> UIBezierPath {
+    func createEndCapPath(_ rect: CGRect) -> UIBezierPath {
         let degrees: CGFloat = progress * -360.0 + 90.0
         let center = CGPoint(x: rect.midX, y: rect.midY)
         
@@ -224,7 +224,7 @@ open class CircularProgressBarView: UIView {
         return path
     }
     
-    func pointFrom(center center: CGPoint, radius: CGFloat, degrees: CGFloat) -> CGPoint {
+    func pointFrom(center: CGPoint, radius: CGFloat, degrees: CGFloat) -> CGPoint {
         var result: CGPoint = CGPoint.zero
         
         let radians = degreesToRadians(Double(-degrees))

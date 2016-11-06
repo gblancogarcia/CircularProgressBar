@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		43777C7E1D08920B0037492F /* CircularProgressBar.h in Headers */ = {isa = PBXBuildFile; fileRef = 43777C7D1D08920B0037492F /* CircularProgressBar.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		43777C871D08929C0037492F /* CircularProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43777C851D08929C0037492F /* CircularProgressBarView.swift */; };
-		438062E41DC8CF26008DAC33 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438062E31DC8CF26008DAC33 /* GridView.swift */; };
 		43C4D59E1D1EB4A4005D6C32 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C4D59D1D1EB4A4005D6C32 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
@@ -18,7 +17,6 @@
 		43777C7D1D08920B0037492F /* CircularProgressBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircularProgressBar.h; sourceTree = "<group>"; };
 		43777C7F1D08920B0037492F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		43777C851D08929C0037492F /* CircularProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressBarView.swift; sourceTree = "<group>"; };
-		438062E31DC8CF26008DAC33 /* GridView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		43C4D59D1D1EB4A4005D6C32 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,7 +50,6 @@
 		43777C7C1D08920B0037492F /* CircularProgressBar */ = {
 			isa = PBXGroup;
 			children = (
-				438062E31DC8CF26008DAC33 /* GridView.swift */,
 				43777C7D1D08920B0037492F /* CircularProgressBar.h */,
 				43777C851D08929C0037492F /* CircularProgressBarView.swift */,
 				43C4D59D1D1EB4A4005D6C32 /* Colors.swift */,
@@ -99,7 +96,7 @@
 		43777C711D08920B0037492F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Gerardo Blanco García";
 				TargetAttributes = {
 					43777C791D08920B0037492F = {
@@ -141,7 +138,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				43C4D59E1D1EB4A4005D6C32 /* Colors.swift in Sources */,
-				438062E41DC8CF26008DAC33 /* GridView.swift in Sources */,
 				43777C871D08929C0037492F /* CircularProgressBarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,8 +159,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -212,8 +210,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -233,6 +233,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -245,6 +246,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -265,6 +267,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
