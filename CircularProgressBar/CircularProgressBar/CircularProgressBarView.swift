@@ -54,9 +54,9 @@ open class CircularProgressBarView: UIView {
     
     @IBInspectable open var progress: CGFloat = 0.0 {
         didSet {
-            if minProgress < 0.0 {
+            if progress < minProgress {
                 progress = minProgress
-            } else if maxProgress > 1.0 {
+            } else if progress > maxProgress {
                 progress = maxProgress
             }
             
