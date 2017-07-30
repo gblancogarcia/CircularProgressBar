@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    @IBAction func buttonPressed(sender: UIButton) {
+    @IBAction func buttonPressed(_ sender: UIButton) {
         let started = circularLoadingBar.started
         
         if started {
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         
         let title = started ? "Start" : "Stop"
         
-        button.setTitle(title, forState: .Normal)
+        button.setTitle(title, for: UIControlState())
     }
 }
 

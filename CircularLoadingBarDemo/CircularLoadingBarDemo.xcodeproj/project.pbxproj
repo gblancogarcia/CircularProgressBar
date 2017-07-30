@@ -99,6 +99,7 @@
 				TargetAttributes = {
 					4381156B1D1EAE9400D76935 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = CQ235PGEX8;
 					};
 				};
 			};
@@ -253,6 +254,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CQ235PGEX8;
 				INFOPLIST_FILE = CircularLoadingBarDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gblancogarcia.CircularLoadingBarDemo;
@@ -264,6 +266,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = CQ235PGEX8;
 				INFOPLIST_FILE = CircularLoadingBarDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gblancogarcia.CircularLoadingBarDemo;

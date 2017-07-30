@@ -9,21 +9,21 @@
 import UIKit
 
 private let step = CGFloat(15)
-private let timeInterval: NSTimeInterval = 0.05
+private let timeInterval: TimeInterval = 0.05
 
 @IBDesignable
 class CircularLoadingBar: UIView {
     
     var started = false
     
-    private var angle: CGFloat = 0.0
-    private var timer = NSTimer()
+    fileprivate var angle: CGFloat = 0.0
+    fileprivate var timer = Timer()
     
-    override func drawRect(rect: CGRect) {
+    override func draw(_ rect: CGRect) {
         StyleKit.drawCircularLoadingBar(angle: angle)
     }
     
-    private func updateUserInterface() {
+    fileprivate func updateUserInterface() {
         setNeedsDisplay()
     }
     
@@ -32,7 +32,7 @@ class CircularLoadingBar: UIView {
         let selector = #selector(incrementAngle)
         
         timer.invalidate()
-        timer = .scheduledTimerWithTimeInterval(timeInterval, target: self, selector: selector, userInfo: nil, repeats: true)
+        timer = .scheduledTimer(timeInterval: timeInterval, target: self, selector: selector, userInfo: nil, repeats: true)
     }
     
     func stop() {
@@ -42,8 +42,8 @@ class CircularLoadingBar: UIView {
     }
     
     func incrementAngle() {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.angle = (self.angle + step) % 360
+        DispatchQueue.main.async {
+            self.angle = (self.angle + step).truncatingRemainder(dividingBy: 360)
             self.updateUserInterface()
         }
     }

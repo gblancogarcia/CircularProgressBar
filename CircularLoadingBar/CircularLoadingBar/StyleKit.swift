@@ -12,28 +12,28 @@
 
 import UIKit
 
-public class StyleKit : NSObject {
+open class StyleKit : NSObject {
 
     //// Cache
 
-    private struct Cache {
+    fileprivate struct Cache {
         static let topColor: UIColor = UIColor(red: 0.000, green: 0.776, blue: 1.000, alpha: 1.000)
         static let bottomColor: UIColor = UIColor(red: 0.000, green: 0.447, blue: 1.000, alpha: 1.000)
-        static let progressBarGradient: CGGradient = CGGradientCreateWithColors(CGColorSpaceCreateDeviceRGB(), [StyleKit.topColor.CGColor, StyleKit.bottomColor.CGColor], [0, 1])!
+        static let progressBarGradient: CGGradient = CGGradient(colorsSpace: CGColorSpaceCreateDeviceRGB(), colors: [StyleKit.topColor.cgColor, StyleKit.bottomColor.cgColor] as CFArray, locations: [0, 1])!
     }
 
     //// Colors
 
-    public class var topColor: UIColor { return Cache.topColor }
-    public class var bottomColor: UIColor { return Cache.bottomColor }
+    open class var topColor: UIColor { return Cache.topColor }
+    open class var bottomColor: UIColor { return Cache.bottomColor }
 
     //// Gradients
 
-    public class var progressBarGradient: CGGradient { return Cache.progressBarGradient }
+    open class var progressBarGradient: CGGradient { return Cache.progressBarGradient }
 
     //// Drawing Methods
 
-    public class func drawCircularLoadingBar(angle angle: CGFloat = 90) {
+    open class func drawCircularLoadingBar(angle: CGFloat = 90) {
         //// General Declarations
         let context = UIGraphicsGetCurrentContext()
 
@@ -45,73 +45,73 @@ public class StyleKit : NSObject {
         let endAngle: CGFloat = startAngle - 90
 
         //// Background Drawing
-        CGContextSaveGState(context)
-        CGContextTranslateCTM(context, 32, 32)
+        context?.saveGState()
+        context?.translateBy(x: 32, y: 32)
 
         let backgroundPath = UIBezierPath()
-        backgroundPath.moveToPoint(CGPointMake(0, -24))
-        backgroundPath.addCurveToPoint(CGPointMake(-12.38, -20.57), controlPoint1: CGPointMake(-4.53, -24), controlPoint2: CGPointMake(-8.76, -22.75))
-        backgroundPath.addCurveToPoint(CGPointMake(-24, 0), controlPoint1: CGPointMake(-19.34, -16.37), controlPoint2: CGPointMake(-24, -8.73))
-        backgroundPath.addCurveToPoint(CGPointMake(-0, 24), controlPoint1: CGPointMake(-24, 13.25), controlPoint2: CGPointMake(-13.25, 24))
-        backgroundPath.addCurveToPoint(CGPointMake(24, 0), controlPoint1: CGPointMake(13.25, 24), controlPoint2: CGPointMake(24, 13.25))
-        backgroundPath.addCurveToPoint(CGPointMake(0, -24), controlPoint1: CGPointMake(24, -13.25), controlPoint2: CGPointMake(13.25, -24))
-        backgroundPath.closePath()
-        backgroundPath.moveToPoint(CGPointMake(32, 0))
-        backgroundPath.addCurveToPoint(CGPointMake(-0, 32), controlPoint1: CGPointMake(32, 17.67), controlPoint2: CGPointMake(17.67, 32))
-        backgroundPath.addCurveToPoint(CGPointMake(-32, 0), controlPoint1: CGPointMake(-17.67, 32), controlPoint2: CGPointMake(-32, 17.67))
-        backgroundPath.addCurveToPoint(CGPointMake(-19.33, -25.5), controlPoint1: CGPointMake(-32, -10.41), controlPoint2: CGPointMake(-27.03, -19.66))
-        backgroundPath.addCurveToPoint(CGPointMake(0, -32), controlPoint1: CGPointMake(-13.96, -29.58), controlPoint2: CGPointMake(-7.26, -32))
-        backgroundPath.addCurveToPoint(CGPointMake(32, 0), controlPoint1: CGPointMake(17.67, -32), controlPoint2: CGPointMake(32, -17.67))
-        backgroundPath.closePath()
+        backgroundPath.move(to: CGPoint(x: 0, y: -24))
+        backgroundPath.addCurve(to: CGPoint(x: -12.38, y: -20.57), controlPoint1: CGPoint(x: -4.53, y: -24), controlPoint2: CGPoint(x: -8.76, y: -22.75))
+        backgroundPath.addCurve(to: CGPoint(x: -24, y: 0), controlPoint1: CGPoint(x: -19.34, y: -16.37), controlPoint2: CGPoint(x: -24, y: -8.73))
+        backgroundPath.addCurve(to: CGPoint(x: -0, y: 24), controlPoint1: CGPoint(x: -24, y: 13.25), controlPoint2: CGPoint(x: -13.25, y: 24))
+        backgroundPath.addCurve(to: CGPoint(x: 24, y: 0), controlPoint1: CGPoint(x: 13.25, y: 24), controlPoint2: CGPoint(x: 24, y: 13.25))
+        backgroundPath.addCurve(to: CGPoint(x: 0, y: -24), controlPoint1: CGPoint(x: 24, y: -13.25), controlPoint2: CGPoint(x: 13.25, y: -24))
+        backgroundPath.close()
+        backgroundPath.move(to: CGPoint(x: 32, y: 0))
+        backgroundPath.addCurve(to: CGPoint(x: -0, y: 32), controlPoint1: CGPoint(x: 32, y: 17.67), controlPoint2: CGPoint(x: 17.67, y: 32))
+        backgroundPath.addCurve(to: CGPoint(x: -32, y: 0), controlPoint1: CGPoint(x: -17.67, y: 32), controlPoint2: CGPoint(x: -32, y: 17.67))
+        backgroundPath.addCurve(to: CGPoint(x: -19.33, y: -25.5), controlPoint1: CGPoint(x: -32, y: -10.41), controlPoint2: CGPoint(x: -27.03, y: -19.66))
+        backgroundPath.addCurve(to: CGPoint(x: 0, y: -32), controlPoint1: CGPoint(x: -13.96, y: -29.58), controlPoint2: CGPoint(x: -7.26, y: -32))
+        backgroundPath.addCurve(to: CGPoint(x: 32, y: 0), controlPoint1: CGPoint(x: 17.67, y: -32), controlPoint2: CGPoint(x: 32, y: -17.67))
+        backgroundPath.close()
         backgroundColor.setFill()
         backgroundPath.fill()
 
-        CGContextRestoreGState(context)
+        context?.restoreGState()
 
 
         //// Progress Bar
-        CGContextSaveGState(context)
-        CGContextBeginTransparencyLayer(context, nil)
+        context?.saveGState()
+        context?.beginTransparencyLayer(auxiliaryInfo: nil)
 
         //// Clip Mask Path
-        let maskPathRect = CGRectMake(0, 0, 64, 64)
+        let maskPathRect = CGRect(x: 0, y: 0, width: 64, height: 64)
         let maskPathPath = UIBezierPath()
-        maskPathPath.addArcWithCenter(CGPointMake(maskPathRect.midX, maskPathRect.midY), radius: maskPathRect.width / 2, startAngle: -startAngle * CGFloat(M_PI)/180, endAngle: -endAngle * CGFloat(M_PI)/180, clockwise: true)
-        maskPathPath.addLineToPoint(CGPointMake(maskPathRect.midX, maskPathRect.midY))
-        maskPathPath.closePath()
+        maskPathPath.addArc(withCenter: CGPoint(x: maskPathRect.midX, y: maskPathRect.midY), radius: maskPathRect.width / 2, startAngle: -startAngle * CGFloat(Double.pi)/180, endAngle: -endAngle * CGFloat(Double.pi)/180, clockwise: true)
+        maskPathPath.addLine(to: CGPoint(x: maskPathRect.midX, y: maskPathRect.midY))
+        maskPathPath.close()
 
         maskPathPath.addClip()
 
 
         //// Circle Path Drawing
-        CGContextSaveGState(context)
-        CGContextTranslateCTM(context, 32, 32)
+        context?.saveGState()
+        context?.translateBy(x: 32, y: 32)
 
         let circlePathPath = UIBezierPath()
-        circlePathPath.moveToPoint(CGPointMake(0, -24))
-        circlePathPath.addCurveToPoint(CGPointMake(-12.38, -20.57), controlPoint1: CGPointMake(-4.53, -24), controlPoint2: CGPointMake(-8.76, -22.75))
-        circlePathPath.addCurveToPoint(CGPointMake(-24, 0), controlPoint1: CGPointMake(-19.34, -16.37), controlPoint2: CGPointMake(-24, -8.73))
-        circlePathPath.addCurveToPoint(CGPointMake(-0, 24), controlPoint1: CGPointMake(-24, 13.25), controlPoint2: CGPointMake(-13.25, 24))
-        circlePathPath.addCurveToPoint(CGPointMake(24, 0), controlPoint1: CGPointMake(13.25, 24), controlPoint2: CGPointMake(24, 13.25))
-        circlePathPath.addCurveToPoint(CGPointMake(0, -24), controlPoint1: CGPointMake(24, -13.25), controlPoint2: CGPointMake(13.25, -24))
-        circlePathPath.closePath()
-        circlePathPath.moveToPoint(CGPointMake(32, 0))
-        circlePathPath.addCurveToPoint(CGPointMake(-0, 32), controlPoint1: CGPointMake(32, 17.67), controlPoint2: CGPointMake(17.67, 32))
-        circlePathPath.addCurveToPoint(CGPointMake(-32, 0), controlPoint1: CGPointMake(-17.67, 32), controlPoint2: CGPointMake(-32, 17.67))
-        circlePathPath.addCurveToPoint(CGPointMake(-19.33, -25.5), controlPoint1: CGPointMake(-32, -10.41), controlPoint2: CGPointMake(-27.03, -19.66))
-        circlePathPath.addCurveToPoint(CGPointMake(0, -32), controlPoint1: CGPointMake(-13.96, -29.58), controlPoint2: CGPointMake(-7.26, -32))
-        circlePathPath.addCurveToPoint(CGPointMake(32, 0), controlPoint1: CGPointMake(17.67, -32), controlPoint2: CGPointMake(32, -17.67))
-        circlePathPath.closePath()
-        CGContextSaveGState(context)
+        circlePathPath.move(to: CGPoint(x: 0, y: -24))
+        circlePathPath.addCurve(to: CGPoint(x: -12.38, y: -20.57), controlPoint1: CGPoint(x: -4.53, y: -24), controlPoint2: CGPoint(x: -8.76, y: -22.75))
+        circlePathPath.addCurve(to: CGPoint(x: -24, y: 0), controlPoint1: CGPoint(x: -19.34, y: -16.37), controlPoint2: CGPoint(x: -24, y: -8.73))
+        circlePathPath.addCurve(to: CGPoint(x: -0, y: 24), controlPoint1: CGPoint(x: -24, y: 13.25), controlPoint2: CGPoint(x: -13.25, y: 24))
+        circlePathPath.addCurve(to: CGPoint(x: 24, y: 0), controlPoint1: CGPoint(x: 13.25, y: 24), controlPoint2: CGPoint(x: 24, y: 13.25))
+        circlePathPath.addCurve(to: CGPoint(x: 0, y: -24), controlPoint1: CGPoint(x: 24, y: -13.25), controlPoint2: CGPoint(x: 13.25, y: -24))
+        circlePathPath.close()
+        circlePathPath.move(to: CGPoint(x: 32, y: 0))
+        circlePathPath.addCurve(to: CGPoint(x: -0, y: 32), controlPoint1: CGPoint(x: 32, y: 17.67), controlPoint2: CGPoint(x: 17.67, y: 32))
+        circlePathPath.addCurve(to: CGPoint(x: -32, y: 0), controlPoint1: CGPoint(x: -17.67, y: 32), controlPoint2: CGPoint(x: -32, y: 17.67))
+        circlePathPath.addCurve(to: CGPoint(x: -19.33, y: -25.5), controlPoint1: CGPoint(x: -32, y: -10.41), controlPoint2: CGPoint(x: -27.03, y: -19.66))
+        circlePathPath.addCurve(to: CGPoint(x: 0, y: -32), controlPoint1: CGPoint(x: -13.96, y: -29.58), controlPoint2: CGPoint(x: -7.26, y: -32))
+        circlePathPath.addCurve(to: CGPoint(x: 32, y: 0), controlPoint1: CGPoint(x: 17.67, y: -32), controlPoint2: CGPoint(x: 32, y: -17.67))
+        circlePathPath.close()
+        context?.saveGState()
         circlePathPath.addClip()
-        CGContextDrawLinearGradient(context, StyleKit.progressBarGradient, CGPointMake(-0, -32), CGPointMake(0, 32), CGGradientDrawingOptions())
-        CGContextRestoreGState(context)
+        context?.drawLinearGradient(StyleKit.progressBarGradient, start: CGPoint(x: -0, y: -32), end: CGPoint(x: 0, y: 32), options: CGGradientDrawingOptions())
+        context?.restoreGState()
 
-        CGContextRestoreGState(context)
+        context?.restoreGState()
 
 
-        CGContextEndTransparencyLayer(context)
-        CGContextRestoreGState(context)
+        context?.endTransparencyLayer()
+        context?.restoreGState()
     }
 
 }
